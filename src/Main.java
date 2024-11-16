@@ -14,8 +14,7 @@ public class Main {
         byte clientOS = 0;
         if (clientOS == 0) {
             System.out.println("Установите версию приложения для iOS по ссылке");
-        }
-        if (clientOS == 1) {
+        } else {
             System.out.println("Установите версию приложения для Android по ссылке");
         }
 
@@ -40,7 +39,7 @@ public class Main {
             System.out.println("Установите облегченную версию приложения для Android по ссылке");
         }
         if (clientDeviceYear > 2015 && clientOS == 1) {
-            System.out.println("Установите версию приложения для iOS по ссылке");
+            System.out.println("Установите версию приложения для Android по ссылке");
         }
 
 
@@ -53,14 +52,19 @@ public class Main {
         //Также високосным является каждый четырехсотый год.
         //Год должен быть больше, чем 1584 (в котором был введен високосный год).
 
-        short year = 2022;
+        short year = 105;
         short leapYear = 1584 + 4;
-        if (year %4==0 && year>=1584) {
-            System.out.println(year+ " год является високосным");
-        }
+        if (year > 1584) {
+            if ((year % 400 == 0) || (year % 100 != 0 && year % 4 == 0))
+                System.out.println(year + " год является високосным");
+
         else {
-            System.out.println(year+ " год не является високосным");
+                System.out.println(year + " год не является високосным");
+            }
         }
+        if (year <= 1584) {
+                System.out.println(year + " год не является високосным тк грегорианского каленаря еще не существовало");
+            }
 
 
         //Задача 4
